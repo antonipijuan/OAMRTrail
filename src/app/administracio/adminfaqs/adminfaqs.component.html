@@ -1,0 +1,71 @@
+<div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card>
+        <div class="gene-card-title">
+            <div fxLayout="row" fxLayoutAlign="start center">
+                <div fxLayout="column">
+                    <h4>{{'Table Responsive'|translate}}</h4>
+                </div> <span fxFlex></span>
+
+            </div>
+            <mat-divider></mat-divider>
+        </div>
+        <div class="gene-card-content pad-t-none">
+            <div class="table-responsive">
+                <table class="table table-hover table-middle th-fw-light mb-0">
+                    <thead>
+                        <tr>
+                            <th>User Thumb</th>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th>User-Name</th>
+                            <th>User-ID</th>
+                            <th>Date Joined</th>
+
+                            <th>Ratings</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let vfaq of vfaqs | async; let i = index">
+                            <td><img src="" width="50" height="50" class="img-fluid img-circle" alt="User Image"></td>
+                            <td>{{vfaq.heading}}</td>
+                            <td><span class="badge badge-success rounded">{{vfaq.content}}</span> </td>
+                            <td>{{vfaq.tipologia}}</td>
+                            <td>{{i}}</td>
+                            <td></td>
+                            <td>
+                                <ng-container>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </ng-container>
+                                <ng-container>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </ng-container>
+                                <ng-container>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </ng-container>
+                                <ng-container>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </ng-container>
+
+                                <ng-container>
+                                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                                </ng-container>
+                            </td>
+                            <td>
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-edit mr-1"></i></a>
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-times text-danger"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul>
+                    <li class="text" *ngFor="let item of items | async">
+                        {{item.name}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </mat-card>
+</div>

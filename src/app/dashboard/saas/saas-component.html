@@ -1,0 +1,41 @@
+<div fxLayout="row wrap">
+    <!--     <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100" *ngFor="let content of socialCard">
+        <ms-social-card [socialCard]="content"></ms-social-card>
+    </div> -->
+</div>
+<div fxLayout="row wrap" fxLayoutAlign="start stretch">
+    <div fxFlex.gt-sm="33.33" fxFlex="100" *ngFor=" let list of list">
+        <mat-card class="pad-t-none card-full-height">
+            <div class="gene-thumb no-gutter"><img src="{{list.photo}}"></div>
+            <div class="gene-card-content">
+                <h3>{{list.title}}</h3>
+                <p>{{list.desc}}</p> <span class="meta-post">By: {{list.author}}, {{list.postdate}}</span> </div>
+            <div class="gene-card-footer">
+                <mat-divider></mat-divider>
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <div>
+                        <button mat-icon-button>
+                     <mat-icon>share</mat-icon>
+                  </button>
+                        <button mat-icon-button [matMenuTriggerFor]="options">
+                     <mat-icon>favorite</mat-icon>
+                  </button>
+                    </div> <span fxFlex></span>
+                    <button mat-icon-button [matMenuTriggerFor]="options">
+                  <mat-icon>more_horiz</mat-icon>
+               </button>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>
+<mat-menu #options="matMenu" x-position="before">
+    <button mat-menu-item>
+      <mat-icon>settings</mat-icon> Settings </button>
+    <button mat-menu-item>
+      <mat-icon>more</mat-icon> View More </button>
+    <button mat-menu-item>
+      <mat-icon>notifications_off</mat-icon> Disable notifications </button>
+    <button mat-menu-item>
+      <mat-icon>exit_to_app</mat-icon> Remove Panel </button>
+</mat-menu>
